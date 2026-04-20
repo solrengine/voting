@@ -1,0 +1,21 @@
+<%
+  tones = {
+    open:            "border-green-200 dark:border-green-900/40 bg-green-50 dark:bg-green-900/10 text-green-700 dark:text-green-400",
+    not_started:     "border-yellow-200 dark:border-yellow-900/40 bg-yellow-50 dark:bg-yellow-900/10 text-yellow-700 dark:text-yellow-400",
+    ended:           "border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/40 text-gray-600 dark:text-gray-400",
+    not_initialized: "border-red-200 dark:border-red-900/40 bg-red-50 dark:bg-red-900/10 text-red-700 dark:text-red-400"
+  }
+%>
+<div class="rounded-lg border px-4 py-3 text-sm <%= tones[voting_state] %>">
+  <% case voting_state %>
+  <% when :open %>
+    Voting is open until <time datetime="<%= poll.ends_at.iso8601 %>"><%= poll.ends_at.strftime("%B %-d, %Y") %></time>.
+    Connect your wallet and click Vote on your pick.
+  <% when :not_started %>
+    Voting starts <time datetime="<%= poll.starts_at.iso8601 %>"><%= poll.starts_at.strftime("%B %-d, %Y") %></time>.
+  <% when :ended %>
+    Voting closed <time datetime="<%= poll.ends_at.iso8601 %>"><%= poll.ends_at.strftime("%B %-d, %Y") %></time>. Final results below.
+  <% when :not_initialized %>
+    Poll is not yet initialized on-chain. Run <code class="font-mono">bin/rails voting:init_poll</code>.
+  <% end %>
+</div>

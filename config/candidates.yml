@@ -1,0 +1,20 @@
+poll:
+  id: 2
+  name: "Which dApp should we showcase next on solrengine.org?"
+  description: "Community vote: pick the next dApp we feature on the homepage. One wallet, one click, no sign-in."
+  start_time: 1776297600   # 2026-04-16 00:00:00 UTC — yesterday, so voting is open
+  end_time:   1807920000   # 2027-04-17 00:00:00 UTC — one year window
+
+candidates:
+  - name: "PiggyBank"
+    description: "Time-locked SOL vaults. Send SOL to yourself with a release date."
+    url: "https://piggybank.solrengine.org"
+  - name: "Mercado"
+    description: "On-chain marketplace with SPL token checkout."
+    url: "https://mercado.solrengine.org"
+  - name: "SolanaBytes"
+    description: "Tiny on-chain hex-visualizer for learning account layouts."
+    url: "https://bytes.solrengine.org"
+  - name: "WalletTrain"
+    description: "Train-based wallet UX demo — hop on, hop off."
+    url: "https://wallet.solrengine.org"

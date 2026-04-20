@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@source "../../views";
+@source "../../components";
+
+/* Gem sources are appended dynamically by bin/build-css. */
+@custom-variant dark (&:where(.dark, .dark *));
